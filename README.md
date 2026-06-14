@@ -142,3 +142,12 @@ kubectl edit configmap guest-book -n default
 The centralized controller instantly identifies the mutation against the remote tracking repository, displaying a warning indicator within the interface:
 
 Because the **Auto-Healing engine** is explicitly enabled, the controller instantly fires an isolated reconciliation action, wiping out the manual edit and forcefully pulling the clean, immutable definition back from Git to achieve instant self-healing:
+
+## 🧹 Phase 4: Infrastructure Teardown & Deletion
+
+To prevent ongoing cloud computing charges and clean up your environment safely, execute the following commands in sequence. This ensures all network resources, load balancers, and Compute nodes are cleanly removed from your AWS account.
+```
+eksctl delete cluster --name hub-cluster --region us-west-1
+eksctl delete cluster --name spoke-cluster-1 --region us-west-1
+eksctl delete cluster --name spoke-cluster-2 --region us-west-1
+```
