@@ -71,6 +71,9 @@ eksctl create cluster --name spoke-cluster-2 --region us-west-1 --nodegroup-name
 
 ```
 
+<img width="1563" height="421" alt="Screenshot 2026-06-14 162336" src="https://github.com/user-attachments/assets/5f1b6e93-a88f-4f2d-9b8b-7361e01fe98f" />
+
+
 Verify your client local runtime has securely imported all distinct cryptographic contexts:
 
 ```bash
@@ -111,6 +114,9 @@ argocd cluster add <SPOKE_CLUSTER_2_CONTEXT_NAME>
 
 ```
 
+<img width="1434" height="663" alt="Screenshot 2026-06-14 162529" src="https://github.com/user-attachments/assets/d562d07c-a84d-4a0b-ad4d-948f725cb295" />
+
+
 Navigate to your web management dashboard to ensure the control system recognizes all target infrastructure nodes.
 
 ---
@@ -122,6 +128,10 @@ Navigate to your web management dashboard to ensure the control system recognize
 We declare two distinct `Application` resources mapping our tracking code directly to separate destination networks. When synced, the interface validates deployment success simultaneously:
 
 Verify live component state maps correctly onto target system pods:
+
+
+<img width="1865" height="986" alt="Screenshot 2026-06-14 162312" src="https://github.com/user-attachments/assets/6565dbe4-e47a-4ba4-9629-744b51aea318" />
+
 
 ```bash
 kubectl config use-context <YOUR_SPOKE_1_ARN>
